@@ -31,11 +31,16 @@ class Customer(models.Model):
     def __str__(self):
         return self.qq
 
+    class Meta:
+        verbose_name_plural = "客户信息表"
+
 class Tag(models.Model):
     """标签"""
     name = models.CharField(unique=True,max_length=32)
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name_plural = "标签"
 
 class CustomerFollowUp(models.Model):
     """客户跟进表"""
@@ -56,6 +61,9 @@ class CustomerFollowUp(models.Model):
     def __str__(self):
         return "<%s : %s>" %(self.customer.qq,self.intention)
 
+    class Meta:
+        verbose_name_plural = "客户跟进表"
+
 class UserProfile(models.Model):
     """角色表"""
     user = models.OneToOneField(User,on_delete=models.CASCADE)   #关联django 自带的表
@@ -64,6 +72,9 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = "角色表"
 #学习与上课是一对多
 class CourseRecord(models.Model):
     """上课记录表"""
@@ -82,6 +93,7 @@ class CourseRecord(models.Model):
     #联合唯一   同时出现
     class Meta:
         unique_together = ("from_class","day_num")
+        verbose_name_plural = "上课记录表"
 
 class StudyRecord(models.Model):
     """学习记录"""
@@ -111,16 +123,24 @@ class StudyRecord(models.Model):
     def __str__(self):
         return "%s %s %s" %(self.student,self.course_record,self.score)
 
+    class Meta:
+        unique_together = ('student','course_record')
+        verbose_name_plural = "学习记录"
+
 class Branch(models.Model):
     """分区"""
     name = models.CharField(max_length=64,unique=True)
     addr = models.CharField(max_length=128)
 
+    class Meta:
+        verbose_name_plural = "分区"
+
 class ClassList(models.Model):
     """班级表"""
     branch = models.ForeignKey("Branch",verbose_name="校区",on_delete=models.CASCADE)
     course = models.ForeignKey("Course",on_delete=models.CASCADE)
-    class_type_choice = ((0,'面授(周中)'),
+    class_type_choice = (
+                         (0,'面授(周中)'),
                          (1,'面授(周末)'),
                          (2,'网络'),
                          )
@@ -136,6 +156,7 @@ class ClassList(models.Model):
     #联合唯一
     class Meta:
         unique_together = ('branch','course','semester')
+        verbose_name_plural = "班级表"
 
 class Course(models.Model):
     """课程表"""
@@ -146,6 +167,9 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = "课程表"
 
 class Enrollment(models.Model):
     """报名表"""
@@ -161,6 +185,7 @@ class Enrollment(models.Model):
 
     class Meta:
         unique_together = ("customer","enrolled_class")
+        verbose_name_plural = "报名表"
 
 class Pyment(models.Model):
     """缴费记录"""
@@ -172,9 +197,17 @@ class Pyment(models.Model):
 
     def __str__(self):
         return "%s %s" %(self.customer,self.amount)
+    class Meta:
+        verbose_name_plural = "缴费记录"
+        verbose_name = "缴费记录"
+
+
 
 class Role(models.Model):
     """权限表"""
     name = models.CharField(max_length=32,unique=True)
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = "权限表"
