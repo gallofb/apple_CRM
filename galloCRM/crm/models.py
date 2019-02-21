@@ -21,8 +21,12 @@ class Customer(models.Model):
     consult_course = models.ForeignKey("Course",verbose_name="咨询课程",on_delete=models.CASCADE)
     #标签
     content = models.TextField(verbose_name="咨询详情")
-    tag = models.ManyToManyField("Tag",blank=True,null=True)
+    tags = models.ManyToManyField("Tag",blank=True)
     # 备注
+    status_choice = ((0,"已报名"),
+                     (1,'未报名'),)
+
+    status = models.SmallIntegerField(choices=source_choice,default=1)
     note = models.CharField(max_length=64,blank=True,null=True)
     #销售顾问
     consultant = models.ForeignKey("UserProfile",on_delete=models.CASCADE)
@@ -68,7 +72,7 @@ class UserProfile(models.Model):
     """角色表"""
     user = models.OneToOneField(User,on_delete=models.CASCADE)   #关联django 自带的表
     name = models.CharField(max_length=32)
-    roles = models.ManyToManyField("Role",blank=True,null=True)
+    roles = models.ManyToManyField("Role",blank=True)
 
     def __str__(self):
         return self.name
@@ -206,8 +210,18 @@ class Pyment(models.Model):
 class Role(models.Model):
     """权限表"""
     name = models.CharField(max_length=32,unique=True)
+    menus = models.ManyToManyField("Menu",blank=True)
     def __str__(self):
         return self.name
 
     class Meta:
         verbose_name_plural = "权限表"
+
+class Menu(models.Model):
+    """菜单"""
+    name = models.CharField(max_length=32)
+    #存放url的别名
+    url_name = models.CharField(max_length=64,unique=True)
+
+    def __str__(self):
+        return self.name
