@@ -20,5 +20,6 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^crm/',include('crm.urls')),
-    url(r'^student/',include('students.urls'))
+    url(r'^student/',include('students.urls')),
+    url(r'^king_admin/',include('king_admin.urls'))
 ]
