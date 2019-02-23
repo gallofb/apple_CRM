@@ -10,9 +10,9 @@ register = template.Library()
 def render_app_name(admin_class):
     return admin_class.model._meta.verbose_name
 
-@register.simple_tag
-def get_query_sets(admin_class):
-    return admin_class.model.objects.all()
+# @register.simple_tag
+# def get_query_sets(admin_class):
+#     return admin_class.model.objects.all()
 
 @register.simple_tag
 def build_table_row(obj,admin_class):
@@ -36,17 +36,18 @@ def build_table_row(obj,admin_class):
 
 @register.simple_tag
 def render_page_ele(loop_counter,query_sets):
-    if abs(query_sets.number - loop_counter) <= 1:
+    # print(query_sets.number)  query_sets.number 总页数
+    if abs(query_sets.number - loop_counter) <= 3:
         ele_class = ""
         if query_sets.number == loop_counter:
             ele_class = "active"
         ele = '''<li class="%s"><a href="?page=%s">%s</a><li>'''%(ele_class,loop_counter,loop_counter)
         return mark_safe(ele)
+    return ""
 
-
-@register.simple_tag
-def render_filter_ele(condtion,admin_class):
-    select_ele = "<select name='%s'>" %condtion
+# @register.simple_tag
+# def render_filter_ele(condtion,admin_class):
+#     select_ele = "<select name='%s'>" %condtion
 
 
 
