@@ -5,11 +5,12 @@ enable_admins = {}
 class BaseAdmin(object):
     list_display = []
     list_filter = []
-    list_per_page = []
+    list_per_page = 1
 
 #子类
 class CustomerAdmin(BaseAdmin):
     list_display = ['qq','name','source','consultant','date','status']
+    list_filters = ['source', 'consultant', 'consult_course', 'status']
 
     # model = models.Customer  和 admin_class.model = model_class
 

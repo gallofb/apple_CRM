@@ -9,15 +9,23 @@
         </div>
         <div class="panel-body">
             <div class="row">
-{#                <from class="" method="get">#}
-{#                    {% for condtion in admin_class %}#}
-{#                </from>#}
+                <form class="" method="get">
+                    {% for condtion in admin_class.list_filters %}
+                        <div class="col-lg-2">
+                            <sapan>{{ condtion }}</sapan>
+                            {% render_filter_ele condtion admin_class filter_condtions %}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-success">GO</button>
+                </form>
             </div>
+
             <table class="table table-hover">
                 <thead>
                     <tr>
                        {% for column in admin_class.list_display %}
-                            <th>{{ column }}</th>
+{#                            <th>{{ column }}</th>#}
+                           {% built_table_header_column column orderby_key filter_condtions %}
                         {% endfor %}
                     </tr>
                 </thead>
@@ -36,17 +44,14 @@
                     <li class=""><a href="?page={{ query_sets.previous_page_number }}">上一页</a></li>
                 {% endif %}
 
-                {% for loop_counter in query_sets.paginator.page_range %}
-{#                    {{ loop_counter }}#}
-                    {% render_page_ele loop_counter query_sets %}
-                {% endfor %}
+{#                {% for loop_counter in query_sets.paginator.page_range %}#}
+{#                    {% render_page_ele loop_counter query_sets filter_condtions%}#}
+{#                {% endfor %}#}
+                {% built_paginators query_sets filter_condtions %}
 
                 {% if query_sets.has_next %}
                     <li class=""><a href="?page={{ query_sets.next_page_number }}">下一页</a></li>
                 {% endif %}
-{#                {% if not query_sets.has_next %}#}
-{#                    <li class="">null</li>#}
-{#                {% endif %}#}
             </ul>
         </nav>
         </div>
