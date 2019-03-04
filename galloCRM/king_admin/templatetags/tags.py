@@ -1,6 +1,6 @@
 from django import template
 from django.utils.safestring import mark_safe
-
+from django.utils.timezone import datetime,timedelta
 from django import template
 register = template.Library()
 
@@ -35,7 +35,7 @@ def build_table_row(obj,admin_class):
     return mark_safe(row_ele)
 
 @register.simple_tag
-def built_paginators(query_sets,filter_condtions):
+def built_paginators(query_sets,filter_condtions,previous_orderby,search_text):
     page_btns = ''
     filters = ''
     for k, v in filter_condtions.items():
@@ -51,8 +51,8 @@ def built_paginators(query_sets,filter_condtions):
             if query_sets.number == page_num:
                 added_dot_ele = False
                 ele_class = "active"
-            page_btns += '''<li class="%s"><a href="?page=%s%s">%s</a><li>'''\
-                         %(ele_class,page_num,filters,page_num)
+            page_btns += '''<li class="%s"><a href="?page=%s%s&o=%s&_q=%s">%s</a><li>'''\
+                         %(ele_class,page_num,filters,previous_orderby,search_text,page_num)
 
         # elif abs(query_sets.number - page_num) <= 1: #判断前后1页
         #     ele_class = ""
@@ -90,38 +90,62 @@ def render_page_ele(loop_counter,query_sets,filter_condtions):
     return ""
 
 @register.simple_tag
-def render_filter_ele(condtion,admin_class,filter_condtions):
-
-    select_ele = '''<select class="form-control" name='%s'><option value=''>----</option>''' %condtion
-    field_obj = admin_class.model._meta.get_field(condtion)
-
+def render_filter_ele(filter_field,admin_class,filter_condtions):
+    select_ele = '''<select class="form-control" name='{filter_field}' ><option value=''>----</option>'''
+    field_obj = admin_class.model._meta.get_field(filter_field)
     if field_obj.choices:
         selected = ''
         for choice_item in field_obj.choices:
-            #condtion king_admin列表中的元素
-            if filter_condtions.get(condtion) == str(choice_item[0]):
+            print("choice", choice_item, filter_condtions.get(filter_field), type(filter_condtions.get(filter_field)))
+            if filter_condtions.get(filter_field) == str(choice_item[0]):
                 selected = "selected"
 
-            select_ele += '''<option value='%s' %s>%s</option>''' %(choice_item[0],selected,choice_item[1])
+            select_ele += '''<option value='%s' %s>%s</option>''' % (choice_item[0], selected, choice_item[1])
             selected = ''
 
     if type(field_obj).__name__ == "ForeignKey":
         selected = ''
         for choice_item in field_obj.get_choices()[1:]:
-            if filter_condtions.get(condtion) == str(choice_item[0]):
-                selected = 'selected'
-            select_ele += '''<option value='%s' %s>%s</option>''' %(choice_item[0],selected,choice_item[1])
+            if filter_condtions.get(filter_field) == str(choice_item[0]):
+                selected = "selected"
+            select_ele += '''<option value='%s' %s>%s</option>''' % (choice_item[0], selected, choice_item[1])
+            selected = ''
+    if type(field_obj).__name__ in ['DateTimeField', 'DateField']:
+        date_els = []
+        today_ele = datetime.now().date()
+        date_els.append(['今天', datetime.now().date()])
+        date_els.append(["昨天", today_ele - timedelta(days=1)])
+        date_els.append(["近7天", today_ele - timedelta(days=7)])
+        date_els.append(["本月", today_ele.replace(day=1)])
+        date_els.append(["近30天", today_ele - timedelta(days=30)])
+        date_els.append(["近90天", today_ele - timedelta(days=90)])
+        date_els.append(["近180天", today_ele - timedelta(days=180)])
+        date_els.append(["本年", today_ele.replace(month=1, day=1)])
+        date_els.append(["近一年", today_ele - timedelta(days=365)])
+
+        selected = ''
+        for item in date_els:
+            select_ele += '''<option value='%s' %s>%s</option>''' % (item[1], selected, item[0])
+
+        filter_field_name = "%s__gte" % filter_field
+
+    else:
+        filter_field_name = filter_field
     select_ele += "</select>"
+    select_ele = select_ele.format(filter_field=filter_field_name)
+
     return mark_safe(select_ele)
 
 @register.simple_tag
-def render_table_header_column(column,orderby_key,filter_condtions):
+def built_table_header_column(column,orderby_key,filter_condtions):
     filters = ''
-    for k,v in filter_condtions:
+    for k,v in filter_condtions.items():
         filters += "&%s=%s" %(k,v)
+
     ele = '''<th><a href="?{filters}&o={orderby_key}">{column}</a>
        {sort_icon}
        </th>'''
+
     if orderby_key:
         if orderby_key.startswith("-"):
             sort_icon = '''<span class="glyphicon glyphicon-chevron-up"></span>'''
@@ -137,6 +161,6 @@ def render_table_header_column(column,orderby_key,filter_condtions):
         orderby_key = column
         sort_icon = ''
     ele = ele.format(orderby_key=orderby_key,column=column,sort_icon=sort_icon,filters=filters)
-    return mark_safe(ele )
+    return mark_safe(ele)
 
 #get_choices

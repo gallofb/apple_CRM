@@ -5,14 +5,17 @@ enable_admins = {}
 class BaseAdmin(object):
     list_display = []
     list_filter = []
-    list_per_page = 1
+    list_per_page =10
+    search_fields = []
+    ordering = None
 
 #子类
 class CustomerAdmin(BaseAdmin):
-    list_display = ['qq','name','source','consultant','date','status']
-    list_filters = ['source', 'consultant', 'consult_course', 'status']
-
+    list_display = ['id','qq','name','source','consultant','date','status']
+    list_filters = ['source', 'consultant', 'consult_course', 'status','date']
+    search_fields = ['qq','name']
     # model = models.Customer  和 admin_class.model = model_class
+    ordering = "id"
 
 class CustomerFollowUpAdmin(BaseAdmin):
     #数据库表里面的字段
