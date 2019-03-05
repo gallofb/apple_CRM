@@ -15,10 +15,10 @@ def render_app_name(admin_class):
 #     return admin_class.model.objects.all()
 
 @register.simple_tag
-def build_table_row(obj,admin_class):
+def build_table_row(request,obj,admin_class):
     #obj <class 'king_admin.king_admin.CustomerAdmin'>
     row_ele = ""
-    for column in admin_class.list_display:    #king_admin
+    for index,column in enumerate(admin_class.list_display):    #king_admin
         field_obj = obj._meta.get_field(column)
         # print(column)    list_diaplay的值
         # print(field_obj)    #crm.Customer.qq
@@ -30,6 +30,11 @@ def build_table_row(obj,admin_class):
             column_data = getattr(obj,column)
         if type(column_data).__name__ == 'datetime':    #用来验证是否是时间的格式
             column_data = column_data.strftime("%Y-%m-%d %H:%M:%S")
+
+        if index == 0:  # add a tag, 可以跳转到修改页
+            column_data = "<a href='{request_path}{obj_id}/change/'>{data}</a>".format(request_path = request.path,
+                                                                                       obj_id = obj.id,
+                                                                                       data = column_data)
 
         row_ele += "<td>%s</td>" % column_data
     return mark_safe(row_ele)
@@ -162,5 +167,9 @@ def built_table_header_column(column,orderby_key,filter_condtions):
         sort_icon = ''
     ele = ele.format(orderby_key=orderby_key,column=column,sort_icon=sort_icon,filters=filters)
     return mark_safe(ele)
+
+@register.simple_tag
+def get_model_name(admin_class):
+    return admin_class.model._meta.verbose_name
 
 #get_choices
