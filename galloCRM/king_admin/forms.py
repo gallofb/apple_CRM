@@ -12,7 +12,6 @@ class CustomerModelForm(ModelForm):
 
 
 
-
 def create_model_form(request,admin_class):
     '''动态生成MODEL FORM'''
 

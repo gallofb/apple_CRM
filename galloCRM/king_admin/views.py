@@ -12,12 +12,13 @@ def index(request):
     # print(king_admin.enable_admins)
     return render(request, "king_admin/table_index.html",{'table_list':king_admin.enable_admins})
 
-
+#显示table
 def display_table_objs(request,app_name,table_name):
     print("-->", app_name, table_name)
     # models_module = importlib.import_module('%s.models'%(app_name))
     # model_obj = getattr(models_module,table_name)
-    admin_class = king_admin.enable_admins[app_name][table_name]
+    admin_class = king_admin.enable_admins[app_name][table_name]    #type(admin_class) is class
+
     # admin_class = king_admin.enabled_admins[crm][userprofile]
 
     # object_list = admin_class.model.objects.all()
@@ -58,7 +59,7 @@ def table_obj_add(request,app_name,table_name):
             return redirect(request.path.replace("/add/","/"))
     else:
         form_obj = model_form_class()
-    return render(request,"king_admin/table_obj_add.html",{"form_obj":form_obj})
+    return render(request,"king_admin/table_obj_add.html",{"form_obj":form_obj,"admin_class":admin_class})
 
 
 
@@ -77,5 +78,9 @@ def table_obj_change(request,app_name,table_name,obj_id):
 
         form_obj = model_form_class(instance=obj)
 
-    return render(request,"king_admin/table_obj_change.html",{"form_obj":form_obj})
+    return render(request,"king_admin/table_obj_change.html",{"form_obj":form_obj,
+                                                              "admin_class":admin_class,
+                                                              "app_name":app_name,
+                                                              "table_name":table_name})
+
 

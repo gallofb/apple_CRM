@@ -8,12 +8,14 @@ class BaseAdmin(object):
     list_per_page =10
     search_fields = []
     ordering = None
+    filter_horizontal = []
 
 #子类
 class CustomerAdmin(BaseAdmin):
     list_display = ['id','qq','name','source','consultant','date','status']
     list_filters = ['source', 'consultant', 'consult_course', 'status','date']
     search_fields = ['qq','name']
+    filter_horizontal = ('tags',)
     # model = models.Customer  和 admin_class.model = model_class
     ordering = "id"
 
