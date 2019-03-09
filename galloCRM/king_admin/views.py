@@ -65,7 +65,7 @@ def table_obj_add(request,app_name,table_name):
 
 def table_obj_change(request,app_name,table_name,obj_id):
 
-    admin_class = king_admin.enable_admins[app_name][table_name]
+    admin_class = king_admin.enable_admins[app_name][table_name]    #表单里面的值
     model_form_class = create_model_form(request,admin_class)
     print(model_form_class)
 
@@ -76,9 +76,25 @@ def table_obj_change(request,app_name,table_name,obj_id):
             form_obj.save()
     else:
 
-        form_obj = model_form_class(instance=obj)
+        form_obj = model_form_class(instance=obj)   #我们还要给表单提供现有对象的数据，
+
 
     return render(request,"king_admin/table_obj_change.html",{"form_obj":form_obj,
+                                                              "admin_class":admin_class,
+                                                              "app_name":app_name,
+                                                              "table_name":table_name})
+
+
+
+def table_obj_delete(request,app_name,table_name,obj_id):
+    admin_class = king_admin.enable_admins[app_name][table_name]
+    obj = admin_class.model.objects.get(id=obj_id)
+    if request.method == 'POST':
+        obj.delete()
+        print(app_name,table_name)
+        return redirect("/king_admin/%s/%s/" %(app_name,table_name))
+
+    return render(request,"king_admin/table_obj_delete.html",{"obj":obj,
                                                               "admin_class":admin_class,
                                                               "app_name":app_name,
                                                               "table_name":table_name})

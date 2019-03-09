@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93802688-111c-4deb-b0eb-cd1d4bbe7ae7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/king_admin/table_obj_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/king_admin/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/king_admin/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/king_admin/king_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/king_admin/king_admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/king_admin/templatetags/tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/king_admin/templatetags/tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/king_admin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/king_admin/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/king_admin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/king_admin/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/king_admin/table_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/king_admin/table_index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/king_admin/table_obj_change.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/king_admin/table_obj_change.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,41 +70,43 @@
     <session id="-1243452218">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="24" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.28" value="2" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.30" value="3" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.32" value="4" />
-          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.34" value="2" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.44" value="2" />
           <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="3449" />
-          <entry key="py" value="14184" />
+          <entry key="html" value="4023" />
+          <entry key="py" value="14666" />
           <entry key="sql" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3449" />
-          <entry key="Python" value="14180" />
-          <entry key="RegExp" value="4" />
+          <entry key="HTML" value="4023" />
+          <entry key="Python" value="14660" />
+          <entry key="RegExp" value="6" />
           <entry key="Scratch" value="114" />
         </counts>
       </usages-collector>
@@ -119,9 +120,9 @@
           <entry key="crm_tag" value="1" />
           <entry key="crm_userprofile" value="1" />
           <entry key="css" value="3" />
-          <entry key="html" value="37" />
+          <entry key="html" value="38" />
           <entry key="js" value="5" />
-          <entry key="py" value="137" />
+          <entry key="py" value="139" />
           <entry key="sql" value="3" />
           <entry key="url_name" value="1" />
         </counts>
@@ -130,10 +131,10 @@
         <counts>
           <entry key="CSS" value="3" />
           <entry key="Database Element" value="7" />
-          <entry key="HTML" value="37" />
+          <entry key="HTML" value="38" />
           <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="137" />
+          <entry key="Python" value="139" />
           <entry key="SQL" value="2" />
           <entry key="Scratch" value="2" />
         </counts>
@@ -148,7 +149,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/king_admin/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
+            <state relative-caret-position="888">
               <caret line="37" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <marker date="1551772212280" expanded="true" signature="579:584" ph="..." />
@@ -159,19 +160,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/king_admin/table_objs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/king_admin/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="288">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
               <folding>
                 <element signature="e#45#85#0" expanded="true" />
               </folding>
@@ -179,24 +171,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/king_admin/table_obj_change.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-              <folding>
-                <element signature="e#426#444#0#HTML" expanded="true" />
-                <element signature="e#586#613#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="208">
+              <caret line="70" column="16" lean-forward="true" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+        <entry file="file://$PROJECT_DIR$/king_admin/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="168">
+              <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/king_admin/king_admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-233">
+              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+                <marker date="1552137661134" expanded="true" signature="127:132" ph="..." />
+                <marker date="1552137661134" expanded="true" signature="1414:1419" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -204,14 +206,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/king_admin/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="80" column="62" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+            <state relative-caret-position="126">
+              <caret line="90" column="50" lean-forward="true" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1551944567419" expanded="true" signature="627:628" ph="..." />
-                <marker date="1551944567419" expanded="true" signature="2350:2842" ph="..." />
-                <marker date="1551944567419" expanded="true" signature="3344:3349" ph="..." />
+                <marker date="1552137432209" expanded="true" signature="627:628" ph="..." />
+                <marker date="1552137432209" expanded="true" signature="2350:2842" ph="..." />
+                <marker date="1552137432209" expanded="true" signature="3377:3382" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/king_admin/table_obj_delete.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -219,7 +230,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/django/core/handlers/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="2760">
               <caret line="125" selection-start-line="125" selection-end-line="125" />
             </state>
           </provider>
@@ -228,19 +239,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/king_admin/templatetags/tags.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="180" column="21" selection-start-line="180" selection-start-column="21" selection-end-line="180" selection-end-column="21" />
+            <state relative-caret-position="1822">
+              <caret line="280" column="87" selection-start-line="280" selection-start-column="87" selection-end-line="280" selection-end-column="87" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
                 <element signature="e#473#1630#0" />
                 <element signature="e#3178#3713#0" />
                 <element signature="e#3806#5902#0" />
                 <element signature="e#5997#6778#0" />
-                <marker date="1551944859037" expanded="true" signature="249:254" ph="..." />
-                <marker date="1551944859037" expanded="true" signature="540:1630" ph="..." />
-                <marker date="1551944859037" expanded="false" signature="1732:3090" ph="..." />
-                <marker date="1551944859037" expanded="true" signature="5992:7874" ph="..." />
-                <marker date="1551944859037" expanded="true" signature="6954:7874" ph="..." />
               </folding>
             </state>
           </provider>
@@ -249,8 +255,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crm/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="768">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -283,6 +289,10 @@
       <find>Tag</find>
       <find>ex</find>
       <find>obj</find>
+      <find>tag</find>
+      <find>table_</find>
+      <find>table_name</find>
+      <find>obj_delete</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -318,17 +328,18 @@
         <option value="$PROJECT_DIR$/crm/views.py" />
         <option value="$PROJECT_DIR$/crm/admin.py" />
         <option value="$PROJECT_DIR$/templates/king_admin/table_obj_add.html" />
-        <option value="$PROJECT_DIR$/king_admin/urls.py" />
         <option value="$PROJECT_DIR$/king_admin/utils.py" />
         <option value="$PROJECT_DIR$/king_admin/forms.py" />
         <option value="$PROJECT_DIR$/templates/king_admin/table_objs.html" />
-        <option value="$PROJECT_DIR$/king_admin/king_admin.py" />
-        <option value="$PROJECT_DIR$/crm/models.py" />
         <option value="$PROJECT_DIR$/templates/king_admin/table_index.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/crm/models.py" />
+        <option value="$PROJECT_DIR$/king_admin/urls.py" />
         <option value="$PROJECT_DIR$/templates/king_admin/table_obj_change.html" />
+        <option value="$PROJECT_DIR$/templates/king_admin/table_obj_delete.html" />
         <option value="$PROJECT_DIR$/king_admin/views.py" />
         <option value="$PROJECT_DIR$/king_admin/templatetags/tags.py" />
+        <option value="$PROJECT_DIR$/king_admin/king_admin.py" />
       </list>
     </option>
   </component>
@@ -339,10 +350,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="517" />
-    <option name="y" value="105" />
-    <option name="width" value="842" />
-    <option name="height" value="612" />
+    <option name="x" value="544" />
+    <option name="y" value="81" />
+    <option name="width" value="838" />
+    <option name="height" value="568" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -361,17 +372,18 @@
             <path>
               <item name="galloCRM" type="b2602c69:ProjectViewProjectNode" />
               <item name="galloCRM" type="462c0819:PsiDirectoryNode" />
-              <item name="crm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="galloCRM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="galloCRM" type="462c0819:PsiDirectoryNode" />
-              <item name="galloCRM" type="462c0819:PsiDirectoryNode" />
+              <item name="king_admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="galloCRM" type="b2602c69:ProjectViewProjectNode" />
               <item name="galloCRM" type="462c0819:PsiDirectoryNode" />
               <item name="king_admin" type="462c0819:PsiDirectoryNode" />
+              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="galloCRM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="galloCRM" type="462c0819:PsiDirectoryNode" />
+              <item name="students" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="galloCRM" type="b2602c69:ProjectViewProjectNode" />
@@ -383,14 +395,6 @@
               <item name="galloCRM" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="king_admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="galloCRM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="galloCRM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
@@ -516,15 +520,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <frame x="544" y="109" width="838" height="540" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49915397" weight="0.42071712" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49915397" weight="0.42065492" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.500846" side_tool="true" weight="0.25380304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970452" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2488336" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5620438" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -543,12 +547,12 @@
       <window_info anchor="right" id="Database" order="4" weight="0.3287891" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49915397" weight="0.26875" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49915397" weight="0.42065492" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.500846" side_tool="true" weight="0.25380304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970452" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2945892" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23017107" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -574,7 +578,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://bf0527be-73f2-431a-861f-28c6e5045760/schema/GalloCRM/table/crm_pyment" />
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/pymysql/err.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -766,59 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/king_admin/table_objs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/king_admin/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/king_admin/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#45#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/king_admin/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <marker date="1551772212280" expanded="true" signature="579:584" ph="..." />
-            <marker date="1551772212280" expanded="true" signature="999:1004" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crm/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/king_admin/king_admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <marker date="1551937521377" expanded="true" signature="81:86" ph="..." />
-            <marker date="1551937521377" expanded="true" signature="253:258" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/king_admin/table_index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -833,59 +783,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/django/core/handlers/base.py">
+    <entry file="file://$PROJECT_DIR$/templates/king_admin/table_objs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        <state relative-caret-position="96">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
+        <state relative-caret-position="840">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/king_admin/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <marker date="1551772212280" expanded="true" signature="579:584" ph="..." />
+            <marker date="1551772212280" expanded="true" signature="999:1004" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/king_admin/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <element signature="e#45#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/king_admin/table_obj_change.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="70" column="16" lean-forward="true" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/king_admin/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/king_admin/table_obj_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/king_admin/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="80" column="62" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+        <state relative-caret-position="126">
+          <caret line="90" column="50" lean-forward="true" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1551944567419" expanded="true" signature="627:628" ph="..." />
-            <marker date="1551944567419" expanded="true" signature="2350:2842" ph="..." />
-            <marker date="1551944567419" expanded="true" signature="3344:3349" ph="..." />
+            <marker date="1552137432209" expanded="true" signature="627:628" ph="..." />
+            <marker date="1552137432209" expanded="true" signature="2350:2842" ph="..." />
+            <marker date="1552137432209" expanded="true" signature="3377:3382" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/king_admin/templatetags/tags.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="180" column="21" selection-start-line="180" selection-start-column="21" selection-end-line="180" selection-end-column="21" />
+        <state relative-caret-position="1822">
+          <caret line="280" column="87" selection-start-line="280" selection-start-column="87" selection-end-line="280" selection-end-column="87" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
             <element signature="e#473#1630#0" />
             <element signature="e#3178#3713#0" />
             <element signature="e#3806#5902#0" />
             <element signature="e#5997#6778#0" />
-            <marker date="1551944859037" expanded="true" signature="249:254" ph="..." />
-            <marker date="1551944859037" expanded="true" signature="540:1630" ph="..." />
-            <marker date="1551944859037" expanded="false" signature="1732:3090" ph="..." />
-            <marker date="1551944859037" expanded="true" signature="5992:7874" ph="..." />
-            <marker date="1551944859037" expanded="true" signature="6954:7874" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/king_admin/table_obj_change.html">
+    <entry file="file://$PROJECT_DIR$/king_admin/king_admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        <state relative-caret-position="-233">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
           <folding>
-            <element signature="e#426#444#0#HTML" expanded="true" />
-            <element signature="e#586#613#0#HTML" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1552137661134" expanded="true" signature="127:132" ph="..." />
+            <marker date="1552137661134" expanded="true" signature="1414:1419" ph="..." />
           </folding>
         </state>
       </provider>
