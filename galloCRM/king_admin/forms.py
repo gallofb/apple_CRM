@@ -24,7 +24,25 @@ def create_model_form(request,admin_class):
             field_obj.widget.attrs['class'] = 'form-control'
             # field_obj.widget.attrs['maxlength'] = getattr(field_obj,'max_length' ) if hasattr(field_obj,'max_length') \
             #     else ""
+
+            if not hasattr(admin_class,"is_add_form"):   #代表这是添加form，不需要disabled
+                if field_name in admin_class.readonly_fields:
+                    field_obj.widget.attrs['disabled'] = 'disabled'
+
         return ModelForm.__new__(cls)
+
+    def default_clean(self):
+        print("------runing default clean",admin_class)
+        for field in admin_class.readonly_fields:
+            field_val = getattr(self.instance,field)
+
+            field_val_from_frontend = self.cleaned_date.get(field)
+            # rasie __ValueError(
+            #     _('Field Readonly value:%(value)s is readonly'),
+            #     code = 'invalid'
+            #     params = ('value','42')
+            #
+            # )
 
     class Meta:
         model = admin_class.model
@@ -32,6 +50,6 @@ def create_model_form(request,admin_class):
     attrs = {'Meta':Meta}
     _model_form_class =  type("DynamicModelForm",(ModelForm,),attrs)
     setattr(_model_form_class,'__new__',__new__)
-
+    setattr(_model_form_class,'clean',default_clean)
     print("model form",_model_form_class.Meta.model )
     return _model_form_class

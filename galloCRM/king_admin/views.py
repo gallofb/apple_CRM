@@ -18,6 +18,19 @@ def display_table_objs(request,app_name,table_name):
     # models_module = importlib.import_module('%s.models'%(app_name))
     # model_obj = getattr(models_module,table_name)
     admin_class = king_admin.enable_admins[app_name][table_name]    #type(admin_class) is class
+    if request.method == "POST":  # action 来了
+
+        print(request.POST)
+        selected_ids = request.POST.get("selected_ids")
+        action = request.POST.get("action")
+        if selected_ids:
+            selected_objs = admin_class.model.objects.filter(id__in=selected_ids.split(','))
+        else:
+            raise KeyError("No object selected.")
+        if hasattr(admin_class, action):
+            action_func = getattr(admin_class, action)
+            request._admin_action = action
+            return action_func(admin_class, request, selected_objs)
 
     # admin_class = king_admin.enabled_admins[crm][userprofile]
 
@@ -88,15 +101,14 @@ def table_obj_change(request,app_name,table_name,obj_id):
 
 def table_obj_delete(request,app_name,table_name,obj_id):
     admin_class = king_admin.enable_admins[app_name][table_name]
+
     obj = admin_class.model.objects.get(id=obj_id)
-    if request.method == 'POST':
+    if request.method == "POST":
         obj.delete()
-        print(app_name,table_name)
         return redirect("/king_admin/%s/%s/" %(app_name,table_name))
 
     return render(request,"king_admin/table_obj_delete.html",{"obj":obj,
                                                               "admin_class":admin_class,
-                                                              "app_name":app_name,
-                                                              "table_name":table_name})
-
-
+                                                              "app_name": app_name,
+                                                              "table_name": table_name
+                                                              })

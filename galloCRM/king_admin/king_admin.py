@@ -10,6 +10,7 @@ class BaseAdmin(object):
     search_fields = []
     ordering = None
     filter_horizontal = []
+    readonly_fields = []
     actions = ["delete_selected_objs",]
 
     def delete_selected_objs(self, request, querysets):
@@ -34,8 +35,16 @@ class CustomerAdmin(BaseAdmin):
     list_filters = ['source', 'consultant', 'consult_course', 'status','date']
     search_fields = ['qq','name']
     filter_horizontal = ('tags',)
+    readonly_fields = ['qq']
+
     # model = models.Customer  和 admin_class.model = model_class
     ordering = "id"
+
+    actions = ["delete_selected_objs","test"]
+    def test(self,request,querysets):
+        print("in test",)
+    test.display_name = "测试动作"
+
 class UserProfileAdmin(BaseAdmin):
     list_display = ('user','name')
 
