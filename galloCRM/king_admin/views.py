@@ -63,6 +63,7 @@ def display_table_objs(request,app_name,table_name):
 
 def table_obj_add(request,app_name,table_name):
     admin_class = king_admin.enable_admins[app_name][table_name]
+    admin_class.is_add_form = True
     model_form_class =create_model_form(request,admin_class)
 
     if request.method == "POST":

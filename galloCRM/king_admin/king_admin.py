@@ -12,6 +12,7 @@ class BaseAdmin(object):
     filter_horizontal = []
     readonly_fields = []
     actions = ["delete_selected_objs",]
+    readonly_table = False
 
     def delete_selected_objs(self, request, querysets):
         app_name = self.model._meta.app_label
@@ -29,13 +30,17 @@ class BaseAdmin(object):
                                                                     "action": request._admin_action
                                                                     })
 
+    def default_form_validation(self):
+        pass
+
 #子类
 class CustomerAdmin(BaseAdmin):
     list_display = ['id','qq','name','source','consultant','date','status']
     list_filters = ['source', 'consultant', 'consult_course', 'status','date']
     search_fields = ['qq','name']
     filter_horizontal = ('tags',)
-    readonly_fields = ['qq']
+    readonly_fields = ['qq','consultant''tags']
+    readonly_table = True
 
     # model = models.Customer  和 admin_class.model = model_class
     ordering = "id"
@@ -44,6 +49,21 @@ class CustomerAdmin(BaseAdmin):
     def test(self,request,querysets):
         print("in test",)
     test.display_name = "测试动作"
+
+    def default_form_validation(self):
+        consult_content = self.cleaned_data.get("content",'')
+        if len(consult_content) < 15:
+            return self.ValidationError(
+                ('Field %(field)s 咨询内容记录不少15个字符'),
+                code = 'invalid',
+                params = {'field':"content",},
+            )
+
+    def clean_name(self):
+        print("name clean validation:", self.cleaned_data["name"])
+        if not self.cleaned_data["name"]:
+            self.add_error('name', "cannot be null")
+
 
 class UserProfileAdmin(BaseAdmin):
     list_display = ('user','name')
