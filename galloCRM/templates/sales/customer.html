@@ -1,4 +1,13 @@
 {% extends "index.html" %}
 {% block page-content%}
     客户库
+{#    {% include "king_admin/table_objs.html" %}#}
 {% endblock %}
+{% block bottom-js %}
+    <script>
+        $(document).ready(function () {
+            $("#content").load("/king_admin/crm/customer/")
+    })
+    </script>
+{% endblock %}
+

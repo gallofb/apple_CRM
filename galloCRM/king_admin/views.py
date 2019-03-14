@@ -104,9 +104,16 @@ def table_obj_delete(request,app_name,table_name,obj_id):
     admin_class = king_admin.enable_admins[app_name][table_name]
 
     obj = admin_class.model.objects.get(id=obj_id)
+    if admin_class.readonly_table:
+        errors = {"readonly_table": "table is readonly,obj [%s] cannot be deleted" % obj}
+    else:
+        errors = [.3]
+
     if request.method == "POST":
-        obj.delete()
-        return redirect("/king_admin/%s/%s/" %(app_name,table_name))
+        if not admin_class.readonly_table:
+            obj.delete()
+            return redirect("/king_admin/%s/%s/" %(app_name,table_name))
+
 
     return render(request,"king_admin/table_obj_delete.html",{"obj":obj,
                                                               "admin_class":admin_class,
