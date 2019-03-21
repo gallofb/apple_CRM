@@ -66,7 +66,7 @@ class CustomerAdmin(BaseAdmin):
 
 
 class UserProfileAdmin(BaseAdmin):
-    list_display = ('user','name')
+    list_display = ('email','name')
 
 
 class CustomerFollowUpAdmin(BaseAdmin):
