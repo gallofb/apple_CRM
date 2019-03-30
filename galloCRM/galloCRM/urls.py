@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
+from galloCRM import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^crm/',include('crm.urls')),
+    url(r'^account/login/$', views.acc_login),
+    url(r'^account/logout/$', views.acc_logout,name="acc_logout"),
     url(r'^student/',include('students.urls')),
     url(r'^king_admin/',include('king_admin.urls'))
 ]

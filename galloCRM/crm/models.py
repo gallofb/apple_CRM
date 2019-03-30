@@ -6,7 +6,7 @@ from django.contrib.auth.models import (BaseUserManager,AbstractBaseUser)
 
 class Customer(models.Model):
     # """客户信息表"""
-    name = models.CharField(max_length=32,blank=True,null=True)
+    name = models.CharField(max_length=32,blank=True,null=True,help_text="用户报名后请改为真实姓名")
     qq = models.CharField(max_length=32,unique=True)   #unique=True指的这个字段在这张表中不能重复
     qq_name = models.CharField(max_length=64,blank=True,null=True)
     phone = models.CharField(max_length=32,blank=True,null=True)
